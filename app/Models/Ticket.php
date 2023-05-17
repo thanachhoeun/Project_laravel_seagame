@@ -15,7 +15,6 @@ class Ticket extends Model
         'event_id',
         'date',
         'price',
-        'zone',
     ];
 
     public function user():BelongsTo{
@@ -24,9 +23,6 @@ class Ticket extends Model
 
     public function event():BelongsTo{
         return $this->belongsTo(Event::class);
-    }
-    public function zone():BelongsTo{
-        return $this->belongsTo(Zone::class);
     }
 
 }

@@ -13,8 +13,6 @@ return new class extends Migration
     {
         Schema::create('tickets', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('zone')->unsigned();
-            $table->foreign('zone')->references('id')->on('zones')->onDelete('cascade');
 
             $table->unsignedBigInteger('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
@@ -23,7 +21,7 @@ return new class extends Migration
             $table->foreign('event_id')->references('id')->on('events')->onDelete('cascade');
 
             $table->datetime('date');
-            $table->integer('price')->default(0);
+            $table->integer('price');
             $table->timestamps();
         });
     }

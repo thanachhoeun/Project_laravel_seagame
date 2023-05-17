@@ -13,7 +13,6 @@ class Team extends Model
         'name',
         'member',
         'user_id',
-        'event_id',
     ];
 
     public function events()

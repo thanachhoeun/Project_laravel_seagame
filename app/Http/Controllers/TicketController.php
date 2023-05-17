@@ -36,7 +36,8 @@ class TicketController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $ticket = Ticket::find($id);
+        return response()->json(['success' => true, 'data' => $ticket],201);
     }
 
     /**
@@ -44,7 +45,14 @@ class TicketController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $ticket = Ticket::find($id);
+        $ticket -> update([
+            'user_id' => $request->input('user_id'),
+            'event_id' => $request->input('event_id'),
+            'date' => $request->input('date'),
+            'price' => $request->input('price'),
+        ]);
+        return response()->json(['success' => true, 'data' => $ticket],200);
     }
 
     /**
@@ -52,6 +60,8 @@ class TicketController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $ticket = Ticket::find($id);
+        $ticket->delete();
+        return response()->json(['success' => true, 'data' => $ticket],200);
     }
 }

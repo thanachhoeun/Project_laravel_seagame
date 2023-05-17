@@ -41,13 +41,10 @@ Route::get('/teams/{id}', [TeamController::class, 'show']);
 Route::put('/teams/{id}', [TeamController::class, 'update']);
 Route::delete('/teams/{id}', [TeamController::class, 'destroy']);
 
-Route::get('/zones', [ZoneController::class, 'index']);
-Route::post('/zones', [ZonesController::class, 'store']);
-Route::get('/zones', [ZoneController::class, 'show']);
-Route::put('/zones', [ZonesController::class, 'update']);
-Route::delete('/zones', [ZonesController::class, 'destroy']);
-
 Route::get('/tickets', [TicketController::class, 'index']);
 Route::post('/tickets', [TicketController::class, 'store']);
+Route::get('/tickets', [TicketController::class, 'show']);
+Route::put('/tickets', [TicketController::class, 'update']);
+Route::delete('/tickets', [TicketController::class, 'destroy']);
 
 
